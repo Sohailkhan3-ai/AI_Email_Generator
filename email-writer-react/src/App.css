@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ---------- Design tokens ---------- */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-soft: rgba(37, 99, 235, 0.12);
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --radius-lg: 20px;
+  --radius-md: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Arial, sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.10), transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(99, 102, 241, 0.10), transparent 45%),
+    linear-gradient(135deg, #f8fafc 0%, #eef2f9 100%);
+  background-attachment: fixed;
+}
+
+/* ---------- Layout ---------- */
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main card */
+.MuiContainer-root {
+  background: var(--surface);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 44px !important;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 24px rgba(15, 23, 42, 0.06),
+    0 32px 64px rgba(15, 23, 42, 0.08);
+}
+
+/* Heading with a small accent bar */
+.MuiTypography-h3 {
+  text-align: center;
+  font-size: 2.1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--text);
+  margin-bottom: 36px !important;
+  position: relative;
+}
+
+.MuiTypography-h3::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), #6366f1);
+}
+
+/* Form spacing */
+.MuiBox-root {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ---------- Inputs ---------- */
+.MuiOutlinedInput-root {
+  border-radius: var(--radius-md) !important;
+  background-color: var(--surface-muted);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: var(--border) !important;
+  transition: border-color 0.2s ease;
+}
+
+.MuiOutlinedInput-root:hover {
+  background-color: var(--surface);
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--border-hover) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused {
+  background-color: var(--surface);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary) !important;
+  border-width: 1.5px !important;
+}
+
+/* Labels */
+.MuiInputLabel-root {
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary) !important;
+}
+
+.MuiInputBase-input {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--text);
+}
+
+/* ---------- Buttons ---------- */
+/* Generate button */
+.MuiButton-contained {
+  border-radius: var(--radius-md) !important;
+  padding: 14px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.6px !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
+}
+
+.MuiButton-contained:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35) !important;
+}
+
+.MuiButton-contained:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Disabled button */
+.MuiButton-contained.Mui-disabled {
+  background: #e2e8f0 !important;
+  color: #94a3b8 !important;
+  box-shadow: none !important;
+  transform: none;
+  filter: none;
+}
+
+/* Copy button */
+.MuiButton-outlined {
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  color: var(--primary) !important;
+  border-color: var(--border-hover) !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.MuiButton-outlined:hover {
+  background-color: var(--primary-soft) !important;
+  border-color: var(--primary) !important;
+}
+
+/* ---------- Generated reply ---------- */
+.MuiTypography-h6 {
+  color: var(--text);
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  margin-top: 8px;
+  margin-bottom: 12px !important;
+}
+
+/* Reply output text field gets a soft highlight so it stands out */
+.MuiContainer-root .MuiBox-root:last-child .MuiOutlinedInput-root {
+  background-color: #f1f5ff;
+}
+
+/* ---------- Dropdown menu (Tone) ---------- */
+.MuiMenu-paper,
+.MuiPopover-paper {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12) !important;
+  margin-top: 6px;
+}
+
+.MuiMenuItem-root {
+  font-size: 14px !important;
+  border-radius: 8px;
+  margin: 2px 6px !important;
+}
+
+.MuiMenuItem-root.Mui-selected {
+  background-color: var(--primary-soft) !important;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .MuiContainer-root {
+    padding: 24px !important;
+    margin: 16px !important;
+    border-radius: 16px;
+  }
+
+  .MuiTypography-h3 {
+    font-size: 1.7rem !important;
+    margin-bottom: 28px !important;
+  }
+}

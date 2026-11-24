@@ -1,0 +1,21 @@
+$kind: http-request
+url: http://localhost:8080/api/email/generate
+method: POST
+headers:
+  Content-Type: application/json
+  X-goog-api-key: {{GEMINI_KEY}}
+body:
+  type: json
+  content: |-
+    {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Explain how AI works in a few words"
+              }
+            ]
+          }
+        ]
+      }
+order: 1000

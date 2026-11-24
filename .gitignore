@@ -1,0 +1,25 @@
+
+# Spring Boot
+**/target/
+*.class
+*.log
+
+# React and Node
+**/node_modules/
+**/dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE files
+**/.idea/
+.vscode/
+
+# Postman workspace configuration
+.postman/
+
+# Operating system files
+.DS_Store
+Thumbs.db
